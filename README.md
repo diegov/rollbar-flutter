@@ -25,3 +25,5 @@ For bug reports, please open an issue on [GitHub](https://github.com/rollbar/rol
 ## License
 
 `rollbar-dart` and `rollbar-flutter` are free software released under the MIT License. See [LICENSE](./LICENSE) for details.
+
+NO CHANGE
