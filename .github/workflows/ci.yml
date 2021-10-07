@@ -11,7 +11,8 @@ jobs:
     name: Flutter version ${{ matrix.flutter_version }}
     strategy:
       matrix:
-        flutter_version: ['2.0.5', '1.20.4', '2.2.3']
+        flutter_version: ['2.0.5']
+        # flutter_version: ['2.0.5', '1.20.4', '2.2.3']
     
     steps:
     - uses: actions/checkout@v2
@@ -67,6 +68,7 @@ jobs:
 
   build_macos:
     runs-on: macos-latest
+    if: ${{ false }}
     name: Flutter version ${{ matrix.flutter_version }} (iOS)
     strategy:
       matrix:
