@@ -52,7 +52,9 @@ jobs:
         ./gradlew check
     - name: Build rollbar_flutter Android example
       working-directory: ./rollbar_flutter/example/
-      run: flutter build apk
+      run: |
+        rm -rf "$ANDROID_NDK_ROOT" &&
+        flutter build apk
     - uses: actions/upload-artifact@v2
       if: ${{ always() }}
       # We are not supposed to lock our dependencies in packages or plugins, so we'll
