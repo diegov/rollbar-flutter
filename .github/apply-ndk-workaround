@@ -10,6 +10,14 @@
 set -e
 set -o pipefail
 
+if [ "$GITHUB_ACTIONS" == "" ]; then
+    cat <<-EOH >&2
+ERROR: This is a specific workaround for an Android Gradle plugin bug when
+running as a Github action, it should not be run in any other scenario.
+EOH
+    exit 1
+fi
+
 # This environment variable points to the default NDK, but Gradle apparently ignores it
 if [ -L "$ANDROID_NDK_ROOT" ]; then
     ANDROID_NDK_ROOT=$(readlink "$ANDROID_NDK_ROOT")
